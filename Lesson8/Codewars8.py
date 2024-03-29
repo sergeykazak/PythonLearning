@@ -84,3 +84,64 @@ to_nato = lambda words: ' '.join(NATO.get(c,c) for c in words if c != ' ')
 # https://blog.garybricks.com/efficiency-and-big-o-notation-overview-with-python-examples
 
 # https://medium.com/analytics-vidhya/big-o-notations-and-its-examples-in-python-9d7e3c1ef09d
+
+
+# Find the unique number
+#DESCRIPTION:
+
+# There is an array with some numbers. All numbers are equal except for one. Try to find it!
+#
+# findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
+# findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
+# It’s guaranteed that array contains at least 3 numbers.
+#
+# The tests contain some very huge arrays, so think about performance.
+#
+# This is the first kata in series:
+#
+# Find the unique number (this kata)
+# Find the unique string
+# Find The Unique
+
+# Option with bad perfomance:
+def find_uniq(arr):
+    for i in range(len(arr)):
+        if arr.count(arr[i]) == 1:
+            return arr[i]
+    # your code here
+    return n   # n: unique number in the array
+
+#Option with good performance:
+def find_uniq(arr):
+    a, b = set(arr)
+    if arr.count(a) == 1:
+        return a
+    return b
+
+
+# Exclamation marks series #7: Remove words from the sentence if it contains one exclamation mark
+
+# Description:
+#
+# Remove words from the sentence if they contain exactly one exclamation mark. Words are separated by a single space,
+# without leading/trailing spaces.
+#
+# Examples
+#
+# remove("Hi!") === ""
+# remove("Hi! Hi!") === ""
+# remove("Hi! Hi! Hi!") === ""
+# remove("Hi Hi! Hi!") === "Hi"
+# remove("Hi! !Hi Hi!") === ""
+# remove("Hi! Hi!! Hi!") === "Hi!!"
+# remove("Hi! !Hi! Hi!") === "!Hi!"
+
+def remove(s):
+    x = []
+    w = s.split()
+    for i in w:
+        if i.count('!') == 1:
+            continue
+        else:
+            x.append(i)
+    return ' '.join(x)
