@@ -1,0 +1,13 @@
+all
+ball
+name
+mother
+football
+game
+tall
+mall
+ball
+fall
+goal
+wall
+all
